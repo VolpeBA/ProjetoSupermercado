@@ -1,12 +1,12 @@
-import { IconBrandAmazon } from '@tabler/icons-react'
+import { IconBuildingStore } from '@tabler/icons-react'
 import Link from 'next/link'
 
 export default function Logo() {
     return (
         <Link href="/">
             <div className="flex flex-col items-center mt-3">
-                <div className="text-xl leading-4">Supermercado</div>
-                <IconBrandAmazon size={40} stroke={1} className="-mt-1" />
+                <div className="text-xl leading-4"></div>
+                <IconBuildingStore size={40} stroke={1} className="-mt-3" />
             </div>
         </Link>
     )
