@@ -1,40 +1,42 @@
-import Produto from "../model/produto";
+import Produto from '@/data/model/produto'
 
 const produtos: Produto[] = [
-    
-        {
-          "id": 1,
-          "nome": "Arroz Branco 1kg",
-          "preco": 5.99,
-          "descricao": "Arroz branco tipo 1, pacote de 1kg.",
-          "imagem": "https://example.com/images/arroz-branco-1kg.jpg"
-        },
-        {
-          "id": 2,
-          "nome": "Feijão Carioca 1kg",
-          "preco": 8.49,
-          "descricao": "Feijão carioca selecionado, pacote de 1kg.",
-          "imagem": "https://example.com/images/feijao-carioca-1kg.jpg"
-        },
-        {
-          "id": 3,
-          "nome": "Óleo de Soja 900ml",
-          "preco": 6.89,
-          "descricao": "Óleo de soja refinado, garrafa de 900ml.",
-          "imagem": "https://example.com/images/oleo-soja-900ml.jpg"
-        },
-        {
-          "id": 4,
-          "nome": "Macarrão Espaguete 500g",
-          "preco": 4.59,
-          "descricao": "Macarrão tipo espaguete, pacote de 500g.",
-          "imagem": "https://example.com/images/macarrao-espaguete-500g.jpg"
-        },
-        {
-          "id": 5,
-          "nome": "Leite Integral 1L",
-          "preco": 4.29,
-          "descricao": "Leite integral de alta qualidade, embalagem de 1 litro.",
-          "imagem": "https://example.com/images/leite-integral-1l.jpg"
-        }
-    ]
+    {
+        id: 1,
+        nome: 'Arroz Camil 2kg',
+        descricao: 'Descrição do produto Arroz Camil 2kg.',
+        preco: 15,
+        imagem: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHNtYXJ0cGhvbmV8ZW58MHx8fHwxNjA2NTQ2NjUx&ixlib=rb-1.2.1&q=80&w=400',
+    },
+    {
+        id: 2,
+        nome: 'Notebook ABC',
+        descricao: 'Notebook com processador Intel i7, 16GB de RAM e 512GB SSD.',
+        preco: 4999.9,
+        imagem: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGxhcHRvcHxlbnwwfHx8fDE2MDY1NDY2NTE&ixlib=rb-1.2.1&q=80&w=400',
+    },
+    {
+        id: 3,
+        nome: 'Fone de Ouvido Bluetooth',
+        descricao: 'Fone de ouvido Bluetooth com cancelamento de ruído e bateria de longa duração.',
+        preco: 299.9,
+        imagem: 'https://images.unsplash.com/photo-1618414074972-723c8314d3db?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        id: 4,
+        nome: 'Smartwatch DEF',
+        descricao:
+            'Smartwatch com monitoramento de atividades físicas e notificações de smartphone.',
+        preco: 799.9,
+        imagem: 'https://images.unsplash.com/photo-1523395243481-163f8f6155ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        id: 5,
+        nome: 'Câmera Digital GHI',
+        descricao: 'Câmera digital com 20MP, zoom óptico de 10x e gravação de vídeo em 4K.',
+        preco: 2499.9,
+        imagem: 'https://images.unsplash.com/photo-1590292339438-5fc3be7fca9d?q=80&w=1960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+]
+
+export default produtos

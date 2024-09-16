@@ -2,23 +2,46 @@
 
 'use client'
 import { createContext, useState } from "react";
+import Produto from "../model/produto";
+import ItemCarrinho from "../model/ItemCarrinho";
 
 interface ContextoCarrinhoProps {
-    numero: number
-    incrementar?: () => void
-    decrementar?: () => void
+    itens: ItemCarrinho[]
+    quantidadeDeItens: number
+    adicionar: (item: Produto) => void
 }
 
 const ContextoCarrinho = createContext<ContextoCarrinhoProps>({} as any);
 
 export function ProvedorCarrinho(props: any) {
-    const [numero, setNumero] = useState(1007)
+    const [itens, setItens] = useState<ItemCarrinho[]>([])
 
-    return <ContextoCarrinho.Provider value={{
-        numero,
-        incrementar: () => setNumero(numero + 1),
-        decrementar: () => setNumero(numero - 1),
-    }}>{props.children}</ContextoCarrinho.Provider>
+    function adicionar(produto: Produto) {
+        const indice = itens.findIndex((i) => i.produto.id === produto.id)
+        if (indice === -1) {
+            setItens([...itens, {produto, quantidade: 1}])
+        } else {
+            const novosItens = [...itens]
+            novosItens[indice].quantidade++
+            setItens(novosItens)
+        }
+    }
+
+
+
+    return (
+        <ContextoCarrinho.Provider 
+            value={{
+                itens,
+                adicionar,
+                get quantidadeDeItens() {
+                    return itens.reduce((acc, item) => acc + item.quantidade, 0)
+                },
+            }}
+        >
+            {props.children}
+        </ContextoCarrinho.Provider>
+    )
 }
 
 export default ContextoCarrinho

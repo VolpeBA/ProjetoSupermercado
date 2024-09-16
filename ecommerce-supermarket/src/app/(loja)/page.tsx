@@ -1,16 +1,17 @@
 'use client'
+import CardProduto from '@/components/produto/CardProduto'
 import Pagina from '@/components/template/Pagina'
-import ContextoCarrinho from '@/data/contexts/ContextoCarrinho'
-import { useContext } from 'react'
+import produtos from '@/data/constants/produtos'
 
 export default function Home() {
-  const { numero, incrementar, decrementar } = useContext(ContextoCarrinho)
 
   return (
     <Pagina>
-      <div>Início: { numero }</div>
-      <button onClick={incrementar}>Incrementar</button>
-      <button onClick={decrementar}>Decrementar</button>
+      <div className='flex gap-5 justify-center flex-wrap'>
+        {produtos.map(produto => (
+          <CardProduto key={produto.id} produto={produto} />
+        ))}
+      </div>
     </Pagina>
   )
 }
