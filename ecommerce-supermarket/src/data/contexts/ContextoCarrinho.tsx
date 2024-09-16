@@ -9,6 +9,7 @@ interface ContextoCarrinhoProps {
     itens: ItemCarrinho[]
     quantidadeDeItens: number
     adicionar: (item: Produto) => void
+    remover: (item: Produto) => void
 }
 
 const ContextoCarrinho = createContext<ContextoCarrinhoProps>({} as any);
@@ -27,6 +28,16 @@ export function ProvedorCarrinho(props: any) {
         }
     }
 
+    function remover(produto: Produto) {
+        const novosItens = itens.map((i) => {
+            if (i.produto.id === produto.id) {
+                i.quantidade--
+            }
+            return i
+        }).filter((i) => i.quantidade > 0)
+        setItens(novosItens)
+    }
+
 
 
     return (
@@ -34,6 +45,7 @@ export function ProvedorCarrinho(props: any) {
             value={{
                 itens,
                 adicionar,
+                remover,
                 get quantidadeDeItens() {
                     return itens.reduce((acc, item) => acc + item.quantidade, 0)
                 },

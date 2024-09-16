@@ -15,5 +15,4 @@ export default function Carrinho() {
             </div>    
         </Link>
     )
-
 }
